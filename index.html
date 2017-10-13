@@ -31,6 +31,10 @@
     .dropdown-menu>li>a{
         color:#fff;
     }
+
+	.main-slider{
+		margin-top: 80px;
+	}
 </style>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -55,13 +59,13 @@
 
                     <li id="userLink" class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">username <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/myArticles">我的文章</a></li>
-                            <li><a href="/setting">账号设置</a></li>
+                            <li><a href="views/myArticles.html">我的文章</a></li>
+                            <li><a href="views/userInfo.html">账号设置</a></li>
                         </ul>
                     </li>
-                    <li><a href="/logout">退出</a></li>
-                    <li><a href="/login">登录</a> </li>
-                    <li><a href="/register">注册</a> </li>
+                    <li><a href="views/login.html">退出</a></li>
+                    <li><a href="views/login.html">登录</a> </li>
+                    <li><a href="views/register.html">注册</a> </li>
 
             </ul>
 
@@ -70,18 +74,18 @@
     </div>
 </nav>
 <div class="container">
-	<header>
+	<!--<header>
 		<a href="#"><img src="images/logo.png"></a>
-	</header>
+	</header> -->
 	<section class="main-slider">
 		<div class="slider">
 			<div class="slider-img">
 				<ul class="slider-img-ul">
-					<li><img src="${ctx}/images/1140x500-2.jpg"><h2><a href="post.html" title="Vintage-Inspired Finds for Your Home">Vintage-Inspired Finds for Your Home</a></h2></li>
-					<li><img src="images/1140x500-1.jpg"></li>
+					<li><img src="images/creative1.jpg"><h2><a href="post.html" title="Vintage-Inspired Finds for Your Home">Vintage-Inspired Finds for Your Home</a></h2></li>
+					<li><img src="images/creative.jpg"></li>
 					<li><img src="images/1140x500-3.jpg"></li>
-					<li><img src="images/1140x500-2.jpg"></li>
-					<li><img src="${ctx}/images/1140x500-1.jpg"></li>
+					<li><img src="images/creative1.jpg"></li>
+					<li><img src="images/creative.jpg"></li>
 				</ul>
 			</div>
 		</div>
@@ -109,8 +113,8 @@
 					<div class="sidebar-widget">
 						<h3 class="sidebar-title">人物介绍</h3>
 						<div class="widget-container widget-about">
-							<a href="post.jsp"><img src="${ctx}/images/author.jpg" alt=""></a>
-							<h4>X</h4>
+							<a href="javascript:void(0)"><img src="images/teacher.jpg" alt=""></a>
+							<h4>XXX</h4>
 							<div class="author-title">导师</div>
 							<p>人物介绍：</p>
 						</div>
