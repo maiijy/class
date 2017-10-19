@@ -1,7 +1,3 @@
-
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ include file="refer.jsp" %> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,11 +44,11 @@
             <ul class="nav navbar-nav">
                 <li id="index"><a href="../index.html">首页</a></li>
                 <li id="post"><a href="postList.html">成果展示</a></li>
-        
+                <li id="activityPage"><a href="activity.html">活动展示</a> </li>
                 <li id="resource"><a href="resource.html">资源下载</a></li>
+                <li id="commentPage"><a href="comments.html">讨论区</a></li>
                 <li><a href="markdownEditor.html">发布</a></li>
-
-                            </ul>
+            </ul>
 
             <ul class="nav navbar-nav navbar-right">
 
@@ -89,7 +85,7 @@
                         <div class="post-meta">
                             <span>${article.artLabel}</span>
                             /
-                            <span><i class="fa fa-clock-o"></i> <fmt:formatDate value='${article.createTime}' pattern='yyyy-MM-dd HH:mm:ss'/></span>
+                            <span><i class="fa fa-clock-o"></i> 发布时间</span>
                             /
                                     <span><i class="fa fa-comment-o"></i> ${article.readNum}</span>
                                     <span><i class="fa fa-comment-o"></i>  0 </span>
@@ -114,18 +110,6 @@
 </footer>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script>
-    function deleteArticle(id) {
-        if(confirm('确定删除这篇文章吗？')){
-            $.post("/deleteArticle",{articleId:id},function (data) {
-                if(data.result == 'success'){
-                    location.href = '/myArticles';
-                }else{
-                    alert("删除出错了...请稍后重试！")
-                }
-            })
-        }
-    }
-</script>
+<script src="../scripts/myArticles.js"></script>
 </body>
 </html>

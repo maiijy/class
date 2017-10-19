@@ -46,10 +46,10 @@
             <ul class="nav navbar-nav">
                 <li id="index"><a href="../index.html">首页</a></li>
                 <li id="post"><a href="postList.html">成果展示</a></li>
-
+                <li id="activityPage"><a href="activity.html">活动展示</a> </li>
                 <li id="resource"><a href="resource.html">资源下载</a></li>
+                <li id="commentPage"><a href="comments.html">讨论区</a></li>
                 <li><a href="markdownEditor.html">发布</a></li>
-                <li><a href="comments.html">讨论区</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -115,23 +115,6 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jqPaginator.js"></script>
 <script src="../js/jquery.artDialog.js"></script>
-<script>
-    $("#post").addClass("active");
-    // var searchType = $("#searchType");
-    //var searchValue = $("#searchValue");
-    // console.log($("#postCount").val());
-    $('#pagination').jqPaginator({
-        totalCounts:parseInt($("#postCount").val()),
-        totalPages: parseInt($("#pageCount").val()),
-        pageSize: 5,
-        currentPage:parseInt($("#currentPage").val()),
-        onPageChange: function (num, type) {
-            if(type == "change"){
-                location.href = "/articleList/page=" + num;
-            }
-        }
-    });
-
-</script>
+<script src="../scripts/comments.js"></script>
 </body>
 </html>
