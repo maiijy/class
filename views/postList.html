@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,13 +44,13 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-               <li id="index"><a href="../index.html">首页</a></li>
+                <li id="index"><a href="../index.html">首页</a></li>
                 <li id="post"><a href="postList.html">成果展示</a></li>
-        
+                <li id="activityPage"><a href="activity.html">活动展示</a> </li>
                 <li id="resource"><a href="resource.html">资源下载</a></li>
+                <li id="commentPage"><a href="comments.html">讨论区</a></li>
                 <li><a href="markdownEditor.html">发布</a></li>
-                <li><a href="comments.html">讨论区</a></li>
-                            </ul>
+            </ul>
 
             <ul class="nav navbar-nav navbar-right">
 
@@ -83,7 +84,7 @@
                                 /
                                 <span>${article.artLabel}</span>
                                 /
-                                <span><i class="fa fa-clock-o"></i> <fmt:formatDate value='${article.createTime}' pattern='yyyy-MM-dd HH:mm:ss'/></span>
+                                <span><i class="fa fa-clock-o"></i> 发布时间</span>
                                 /
                                         <span><i class="fa fa-comment-o"></i> ${article.readNum}</span>
                                          <span><i class="fa fa-comment-o"></i>  0 </span>
@@ -91,11 +92,10 @@
                             </div>
                             <p>${article.artIntro}</p>
                             <!-- <p>最近几年，随着比特币的兴起并不断走高的价格，越来越多的投资者和机构开始对数字货币这一新兴概念产生了兴趣。由比特币创建并使用的区块链技术也获得了从创业公司到金融巨头的广泛关注和参与。</p> -->
-                            <a href="/postDetail/${article.artiId}"><button type="button" class="btn btn-success">继续阅读 >></button></a>
+                            <a href="postDetail.html"><button type="button" class="btn btn-success">继续阅读 >></button></a>
                         </div>
                     </article>
                 </div>
-            </div>
         <div style="text-align:center">
             <ul class="pagination" id="pagination" ></ul>
         </div>
@@ -116,23 +116,6 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jqPaginator.js"></script>
 <script src="../js/jquery.artDialog.js"></script>
-<script>
-    $("#post").addClass("active");
-   // var searchType = $("#searchType");
-    //var searchValue = $("#searchValue");
-   // console.log($("#postCount").val());
-    $('#pagination').jqPaginator({
-        totalCounts:parseInt($("#postCount").val()),
-        totalPages: parseInt($("#pageCount").val()),
-        pageSize: 5,
-        currentPage:parseInt($("#currentPage").val()),
-        onPageChange: function (num, type) {
-            if(type == "change"){
-                location.href = "/articleList/page=" + num;
-            }
-        }
-    });
-
-</script>
+<script src="../scripts/postList.js"></script>
 </body>
 </html>

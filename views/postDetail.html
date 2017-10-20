@@ -1,10 +1,10 @@
-<%--
+<!--
   Created by IntelliJ IDEA.
   User: wuli等等
   Date: 2017/9/23
   Time: 18:15
   To change this template use File | Settings | File Templates.
---%>
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,10 +48,11 @@
             <ul class="nav navbar-nav">
                 <li id="index"><a href="../index.html">首页</a></li>
                 <li id="post"><a href="postList.html">成果展示</a></li>
-        
+                <li id="activityPage"><a href="activity.html">活动展示</a> </li>
                 <li id="resource"><a href="resource.html">资源下载</a></li>
+                <li id="commentPage"><a href="comments.html">讨论区</a></li>
                 <li><a href="markdownEditor.html">发布</a></li>
-                            </ul>
+            </ul>
 
             <ul class="nav navbar-nav navbar-right">
 
@@ -62,8 +63,8 @@
                         </ul>
                     </li>
                     <li><a href="/logout">退出</a></li>
-                    <li><a href="/login">登录</a> </li>
-                    <li><a href="/register">注册</a> </li>
+                    <li><a href="login.html">登录</a> </li>
+                    <li><a href="register.html">注册</a> </li>
 
             </ul>
 
@@ -83,7 +84,7 @@
                     <div class="blog-post-body">
                         <h2><a href="post.jsp">${article.artTitle}</a></h2>
                         <div class="post-meta"><span>by <a href="#">${article.userName}</a></span>/ <span>${article.artLabel}</span>
-                            /<span><i class="fa fa-clock-o"></i>${article.createTime}</span>/ <c:choose>
+                            /<span><i class="fa fa-clock-o"></i>${article.createTime}</span>/
                                     <span><i class="fa fa-comment-o"></i> ${article.readNum}</span>
                                     <span><i class="fa fa-comment-o"></i>  0 </span>
                         </div>
@@ -122,55 +123,6 @@
 <script src="../editor/lib/flowchart.min.js"></script>
 <script src="../editor/lib/jquery.flowchart.min.js"></script>
 <script type="text/javascript" src="../editor/js/editormd.min.js"></script>
-<script>
-    $("#post").addClass("active");
-
-    $(document).ready(function(){
-        var artId = ${article.artiId};
-        $.ajax({
-            type: "post",
-            url: '/postDetail/artContent',
-            data: {
-                id: artId
-            },
-            dataType: "json",
-            success: function (date) {
-                viewLoad(date.content);
-    //                alert(date.content);              //55555555555555555555555
-            },
-            error: function (date) {
-                viewLoad("内容为空！");
-            }
-        });
-
-     //viewLoad(postContent);
-    function viewLoad(postContent) {
-        $("#markdownView").html(postContent);
-        var testEditormdView = editormd.markdownToHTML("test-editormd-view", {
-            //markdown: markdown,//+ "\r\n" + $("#append-test").text(),
-            //htmlDecode      : true,       // 开启 HTML 标签解析，为了安全性，默认不开启
-            htmlDecode: "style,script,iframe",  // you can filter tags decode
-            //toc             : false,
-            tocm: true,    // Using [TOCM]
-            tocContainer: "#custom-toc-container", // 自定义 ToC 容器层
-            //gfm             : false,
-            //tocDropdown     : true,
-            // markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
-            emoji: true,
-            taskList: true,
-            tex: true,  // 默认不解析
-            flowChart: true,  // 默认不解析
-            sequenceDiagram: true  // 默认不解析
-        });
-
-        //console.log("返回一个 jQuery 实例 =>", testEditormdView);
-
-        // 获取Markdown源码
-        //console.log(testEditormdView.getMarkdown());
-
-        //alert(testEditormdView.getMarkdown());
-    }
-    });
-</script>
+<script  src="../scripts/postDetail.js"></script>
 </body>
 </html>
